@@ -1,0 +1,55 @@
+﻿@model DT191G_Projekt.Models.Staff
+
+@{
+    ViewData["Title"] = "Radera personal";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<a asp-action="Index" class="floatright">Tillbaka</a>
+
+<h2>Vill du radera personalen?</h2> <br>
+
+<dl class="infotable">
+    <dt>
+        @Html.DisplayNameFor(model => model.StaffName)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.StaffName)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.StaffRole)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.StaffRole)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.StaffMail)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.StaffMail)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.StaffImageName)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.StaffImageName)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.UpdatedBy)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.UpdatedBy)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.UpdatedDate)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.UpdatedDate)
+    </dd>
+</dl>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="StaffId" />
+    <input type="submit" value="Radera" class="btnaccent" />
+</form>

@@ -1,0 +1,24 @@
+﻿@model DT191G_Projekt.Models.ProductCategory
+
+@{
+    ViewData["Title"] = "Ändra produktkategori";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="floatright">
+    <a asp-action="Index">Tillbaka</a>
+</div>
+
+        <form asp-action="Edit" class="createform">
+            <div asp-validation-summary="ModelOnly" class="error"></div>
+            <input type="hidden" asp-for="ProductCategoryId" />
+                <label asp-for="ProductCategoryName"></label>
+                <input asp-for="ProductCategoryName" />
+                <span asp-validation-for="ProductCategoryName" class="error"></span>
+                <input type="submit" value="Spara" class="btnaccent" />
+        </form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

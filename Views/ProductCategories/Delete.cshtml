@@ -1,0 +1,25 @@
+﻿@model DT191G_Projekt.Models.ProductCategory
+
+@{
+    ViewData["Title"] = "Radera produktkategori";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<a asp-action="Index" class="floatright">Tillbaka</a>
+
+<h2>Vill du radera produktkategorin?</h2> <br>
+
+<dl class="infotable">
+    <dt>
+        @Html.DisplayNameFor(model => model.ProductCategoryName)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.ProductCategoryName)
+    </dd>
+</dl>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="ProductCategoryId" />
+    <input type="submit" value="Radera" class="btnaccent" />
+</form>

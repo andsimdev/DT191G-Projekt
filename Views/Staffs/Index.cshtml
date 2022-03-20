@@ -1,0 +1,53 @@
+﻿@model IEnumerable<DT191G_Projekt.Models.Staff>
+
+@{
+    ViewData["Title"] = "Personal";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<a asp-action="Create" class="floatright btnaccent">Lägg till ny</a>
+
+<br><br>
+
+<table class="companytable">
+    <thead>
+        <tr>
+            <th>
+
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StaffName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StaffRole)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UpdatedDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img src="~/uploaded/@Html.DisplayFor(modelItem => item.StaffImageName)" width="75" alt="" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StaffName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StaffRole)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UpdatedDate)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.StaffId" class="btndark">Visa personal</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

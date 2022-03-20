@@ -1,0 +1,62 @@
+﻿@model IEnumerable<DT191G_Projekt.Models.Product>
+
+@{
+    ViewData["Title"] = "Produkter";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="floatright">
+    <a asp-action="Create" class="btnaccent">Lägg till ny produkt</a> <br><br>
+    <a asp-controller="ProductCategories" asp-action="Index" class="btnaccent">Produktkategorier</a>
+</div>
+
+<br><br><br>
+
+<table class="companytable">
+    <thead>
+        <tr>
+            <th>
+
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductCategory)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UpdatedDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img src="~/uploaded/@Html.DisplayFor(modelItem => item.ProductImageName)" width="100" alt="" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductCategory.ProductCategoryName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UpdatedDate)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.ProductId" class="btndark">Visa produkt</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

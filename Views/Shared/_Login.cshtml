@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="~/favicon.png" type="image/x-icon">
+    <title>@ViewData["Title"] - Intranätet</title>
+    <link rel="stylesheet" href="~/css/style.css">
+</head>
+<body>
+    <img src="~/media/view.jpg" alt="" class="backgroundimagelogin">
+    <header>
+        <nav>
+                <a asp-controller="Home" asp-action="Index" id="logolink"><img src="~/media/globe.svg" alt=""> Intranätet</a>
+
+                    <partial name="_LoginPartial" />
+        </nav>
+    </header>
+
+        <main>
+            @RenderBody()
+        </main>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

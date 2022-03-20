@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="~/favicon.png" type="image/x-icon">
+    <title>@ViewData["Title"] - Intranätet</title>
+    <link rel="stylesheet" href="~/css/style.css">
+</head>
+
+<body>
+    <img src="~/media/view.jpg" alt="" class="backgroundimagelogin">
+    <header>
+        <nav>
+            <a asp-controller="Home" asp-action="Index" id="logolink"><img src="~/media/globe.svg" alt="">
+                Intranätet</a>
+
+            <ul class="navul">
+                <li>
+                    <a asp-area="" asp-controller="Home" asp-action="Index">Startsida</a>
+                </li>
+                <li>
+                    <a asp-area="" asp-controller="Company" asp-action="Index">Företaget</a>
+                </li>
+                <li>
+                    <a asp-area="" asp-controller="Staffs" asp-action="Index">Personal</a>
+                </li>
+                <li>
+                    <a asp-area="" asp-controller="Products" asp-action="Index">Produkter</a>
+                </li>
+                <li>
+                    <a asp-area="Identity" asp-page="/Account/Register">Registrera ny användare</a>
+                </li>
+            </ul>
+
+            <partial name="_LoginPartial" />
+        </nav>
+    </header>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

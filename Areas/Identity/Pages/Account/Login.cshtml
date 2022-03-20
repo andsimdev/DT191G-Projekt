@@ -1,0 +1,38 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Logga in";
+    Layout = "_Login";
+}
+
+<h1>@ViewData["Title"]</h1>
+<section class="loginsection">
+    <form id="account" method="post" class="loginform">
+        <div asp-validation-summary="ModelOnly"></div>
+
+        <label asp-for="Input.Email">E-post</label>
+        <input asp-for="Input.Email" autocomplete="username" aria-required="true" class="logininput"/>
+        <span asp-validation-for="Input.Email" class="error"></span>
+        <br>
+        <label asp-for="Input.Password">Lösenord</label>
+        <input asp-for="Input.Password" autocomplete="current-password" aria-required="true" class="logininput"/>
+        <span asp-validation-for="Input.Password" class="error"></span>
+        <br>
+        <label asp-for="Input.RememberMe">
+            <input asp-for="Input.RememberMe" />
+            @Html.DisplayNameFor(m => m.Input.RememberMe)
+        </label>
+        <br>
+        <button type="submit">Logga in</button>
+        <br><br>
+
+        <!--
+        <a asp-page="./ForgotPassword">Glömt lösenord?</a>
+        -->
+    </form>
+</section>
+
+@section Scripts {
+<partial name="_ValidationScriptsPartial" />
+}

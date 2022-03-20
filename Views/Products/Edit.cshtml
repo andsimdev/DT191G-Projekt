@@ -1,0 +1,37 @@
+﻿@model DT191G_Projekt.Models.Product
+
+@{
+    ViewData["Title"] = "Ändra produkt";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="floatright">
+    <a asp-action="Index">Tillbaka</a>
+</div>
+
+<form asp-action="Edit" class="createform">
+    <div asp-validation-summary="ModelOnly" class="error"></div>
+    <input type="hidden" asp-for="ProductId" />
+    <label asp-for="ProductName"></label>
+    <input asp-for="ProductName" />
+    <span asp-validation-for="ProductName" class="error"></span>
+
+    <label asp-for="ProductDescription"></label>
+    <input asp-for="ProductDescription" />
+    <span asp-validation-for="ProductDescription" class="error"></span>
+
+    <label asp-for="ProductPrice"></label>
+    <input asp-for="ProductPrice"  />
+    <span asp-validation-for="ProductPrice" class="error"></span>
+
+    <label asp-for="ProductCategoryId"></label>
+    <select asp-for="ProductCategoryId" asp-items="ViewBag.ProductCategoryId"></select>
+    <span asp-validation-for="ProductCategoryId" class="error"></span>
+
+    <input type="submit" value="Spara" class="btnaccent" />
+</form>
+
+@section Scripts {
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

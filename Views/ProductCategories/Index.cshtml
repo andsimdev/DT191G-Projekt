@@ -1,0 +1,35 @@
+﻿@model IEnumerable<DT191G_Projekt.Models.ProductCategory>
+
+@{
+    ViewData["Title"] = "Produktkategorier";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<a asp-action="Create" class="floatright btndark">Lägg till ny kategori</a>
+
+<br><br>
+
+<table class="companytable">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductCategoryName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductCategoryName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ProductCategoryId">Ändra</a> |
+                <a asp-action="Delete" asp-route-id="@item.ProductCategoryId">Radera</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

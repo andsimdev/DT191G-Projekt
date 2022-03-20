@@ -1,0 +1,46 @@
+﻿@model DT191G_Projekt.Models.Staff
+
+@{
+    ViewData["Title"] = "Personaldetaljer";
+}
+
+<h1>@Html.DisplayFor(model => model.StaffName)</h1>
+
+<div class="floatright">
+    <a asp-action="Index">Tillbaka</a> |
+    <a asp-action="Edit" asp-route-id="@Model?.StaffId">Ändra</a> |
+    <a asp-action="Delete" asp-route-id="@Model?.StaffId">Radera</a>
+</div>
+
+<dl class="detailsdl">
+    <dt>
+
+    </dt>
+    <dd>
+        <img src="~/uploaded/@Html.DisplayFor(model => model.StaffImageName)" width="200" alt="" />
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.StaffRole)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.StaffRole)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.StaffMail)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.StaffMail)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.UpdatedBy)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.UpdatedBy)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.UpdatedDate)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.UpdatedDate)
+    </dd>
+</dl>

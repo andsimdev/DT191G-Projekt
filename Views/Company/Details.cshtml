@@ -1,0 +1,95 @@
+﻿@model DT191G_Projekt.Models.Company
+
+@{
+    ViewData["Title"] = "Företagsdetaljer";
+}
+
+<h1>@Html.DisplayFor(model => model.CompanyName)</h1>
+
+<div class="floatright">
+    <a asp-action="Index">Tillbaka</a> |
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Ändra</a>
+</div>
+
+<dl class="detailsdl">
+    <dt>
+        @Html.DisplayNameFor(model => model.CompanyPhone)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.CompanyPhone)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.CompanyMail)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.CompanyMail)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.CompanyAddress)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.CompanyAddress)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.CompanyDescription)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.CompanyDescription)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.OpenMonday)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.OpenMonday)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.OpenTuesday)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.OpenTuesday)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.OpenWednedsay)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.OpenWednedsay)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.OpenThursday)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.OpenThursday)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.OpenFriday)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.OpenFriday)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.OpenSaturday)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.OpenSaturday)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.OpenSunday)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.OpenSunday)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.UpdatedBy)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.UpdatedBy)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.UpdatedDate)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.UpdatedDate)
+    </dd>
+</dl>
+
+<br><br><br><br>

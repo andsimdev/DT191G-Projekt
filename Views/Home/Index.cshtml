@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Startsida";
+    Layout = "_Start";
+}
+
+<h1 class="display-4">Välkommen till intranätet!</h1>
+
+<div class="start">
+    <h2>Vad vill du göra?</h2>
+    <div class="startdiv">
+        <a asp-area="" asp-controller="Company" asp-action="Index">Företaget</a>
+        <a asp-area="" asp-controller="Staffs" asp-action="Index">Personal</a>
+        <a asp-area="" asp-controller="Products" asp-action="Index">Produkter</a>
+    </div>
+</div>

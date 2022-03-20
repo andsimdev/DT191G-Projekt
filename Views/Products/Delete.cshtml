@@ -1,0 +1,55 @@
+﻿@model DT191G_Projekt.Models.Product
+
+@{
+    ViewData["Title"] = "Radera produkt";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<a asp-action="Index" class="floatright">Tillbaka</a>
+
+<h2>Vill du radera produkten?</h2> <br>
+
+<dl class="infotable">
+    <dt>
+        @Html.DisplayNameFor(model => model.ProductName)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.ProductName)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.ProductDescription)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.ProductDescription)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.ProductPrice)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.ProductPrice)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.ProductCategory)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.ProductCategory.ProductCategoryName)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.UpdatedBy)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.UpdatedBy)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.UpdatedDate)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.UpdatedDate)
+    </dd>
+</dl>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="ProductId" />
+    <input type="submit" value="Radera" class="btnaccent" />
+</form>

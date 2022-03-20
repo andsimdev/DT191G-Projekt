@@ -1,0 +1,73 @@
+﻿@model DT191G_Projekt.Models.Company
+
+@{
+    ViewData["Title"] = "Skapa nytt företag";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="floatright">
+    <a asp-action="Index">Tillbaka</a>
+</div>
+
+        <form asp-action="Create" class="createform">
+            <div asp-validation-summary="ModelOnly" class="error"></div>
+
+                <label asp-for="CompanyName"></label>
+                <input asp-for="CompanyName" />
+                <span asp-validation-for="CompanyName" class="error"></span>
+
+                <label asp-for="CompanyPhone"></label>
+                <input asp-for="CompanyPhone" />
+                <span asp-validation-for="CompanyPhone" class="error"></span>
+
+                <label asp-for="CompanyMail"></label>
+                <input asp-for="CompanyMail" />
+                <span asp-validation-for="CompanyMail" class="error"></span>
+
+                <label asp-for="CompanyAddress"></label>
+                <input asp-for="CompanyAddress" />
+                <span asp-validation-for="CompanyAddress" class="error"></span>
+
+
+                <label asp-for="CompanyDescription"></label>
+                <input asp-for="CompanyDescription" />
+                <span asp-validation-for="CompanyDescription" class="error"></span>
+
+
+                <label asp-for="OpenMonday"></label>
+                <input asp-for="OpenMonday"/>
+                <span asp-validation-for="OpenMonday" class="error"></span>
+
+                <label asp-for="OpenTuesday"></label>
+                <input asp-for="OpenTuesday"/>
+                <span asp-validation-for="OpenTuesday" class="error"></span>
+
+                <label asp-for="OpenWednedsay"></label>
+                <input asp-for="OpenWednedsay" />
+                <span asp-validation-for="OpenWednedsay" class="error"></span>
+
+                <label asp-for="OpenThursday"></label>
+                <input asp-for="OpenThursday" />
+                <span asp-validation-for="OpenThursday" class="error"></span>
+
+                <label asp-for="OpenFriday"></label>
+                <input asp-for="OpenFriday" />
+                <span asp-validation-for="OpenFriday" class="error"></span>
+
+                <label asp-for="OpenSaturday"></label>
+                <input asp-for="OpenSaturday" />
+                <span asp-validation-for="OpenSaturday" class="error"></span>
+
+                <label asp-for="OpenSunday"></label>
+                <input asp-for="OpenSunday" />
+                <span asp-validation-for="OpenSunday" class="error"></span>
+
+            <div>
+                <input type="submit" value="Skapa" class="btnaccent floatright" />
+            </div>
+        </form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

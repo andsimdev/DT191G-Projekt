@@ -1,0 +1,24 @@
+﻿@model DT191G_Projekt.Models.ProductCategory
+
+@{
+    ViewData["Title"] = "Lägg till produktkategori";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="floatright">
+    <a asp-action="Index">Tillbaka till alla produktkategorier</a>
+</div>
+
+<form asp-action="Create" class="createform">
+    <div asp-validation-summary="ModelOnly" class="error"></div>
+        <label asp-for="ProductCategoryName"></label>
+        <input asp-for="ProductCategoryName" />
+        <span asp-validation-for="ProductCategoryName" class="error"></span>
+        <br>
+        <input type="submit" value="Lägg till" class="btnaccent" />
+</form>
+
+@section Scripts {
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

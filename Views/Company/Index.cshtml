@@ -1,0 +1,39 @@
+﻿@model IEnumerable<DT191G_Projekt.Models.Company>
+
+@{
+    ViewData["Title"] = "Företaget";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<br><br>
+
+<table class="companytable">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UpdatedDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompanyName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UpdatedDate)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btndark">Se företagsdetaljer</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

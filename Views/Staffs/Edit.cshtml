@@ -1,0 +1,42 @@
+﻿@model DT191G_Projekt.Models.Staff
+
+@{
+    ViewData["Title"] = "Ändra personal";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="floatright">
+    <a asp-action="Index">Tillbaka</a>
+</div>
+
+<form asp-action="Edit" class="createform">
+    <div asp-validation-summary="ModelOnly" class="error"></div>
+    <input type="hidden" asp-for="StaffId" />
+
+    <label asp-for="StaffName"></label>
+    <input asp-for="StaffName" />
+    <span asp-validation-for="StaffName" class="error"></span>
+
+    <label asp-for="StaffRole"></label>
+    <input asp-for="StaffRole" />
+    <span asp-validation-for="StaffRole" class="error"></span>
+
+    <label asp-for="StaffMail"></label>
+    <input asp-for="StaffMail" />
+    <span asp-validation-for="StaffMail" class="error"></span>
+    <!--
+            <div class="form-group">
+                <label asp-for="StaffImageFile" class="control-label"></label>
+                <input asp-for="StaffImageFile" class="form-control" />
+                <span asp-validation-for="StaffImageFile" class="text-danger"></span>
+            </div>
+            -->
+    <div>
+        <input type="submit" value="Spara" class="btnaccent" />
+    </div>
+</form>
+
+@section Scripts {
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

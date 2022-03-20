@@ -1,0 +1,37 @@
+﻿@model DT191G_Projekt.Models.Staff
+
+@{
+    ViewData["Title"] = "Lägg till personal";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="floatright">
+    <a asp-action="Index">Tillbaka</a>
+</div>
+
+<form asp-action="Create" enctype="multipart/form-data" class="createform">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <label asp-for="StaffName"></label>
+    <input asp-for="StaffName" />
+    <span asp-validation-for="StaffName" class="error"></span>
+
+    <label asp-for="StaffRole"></label>
+    <input asp-for="StaffRole" />
+    <span asp-validation-for="StaffRole" class="error"></span>
+
+    <label asp-for="StaffMail"></label>
+    <input asp-for="StaffMail" />
+    <span asp-validation-for="StaffMail" class="error"></span>
+
+    <label asp-for="StaffImageFile"></label>
+    <input asp-for="StaffImageFile" />
+    <span asp-validation-for="StaffImageFile" class="error"></span>
+
+    <input type="submit" value="Lägg till" class="btnaccent" />
+</form>
+
+@section Scripts {
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
